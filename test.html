@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BYD Coin - Build Your Dreams (with a Smile!)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Playfair+Display:wght@700&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #101827, #1e293b, #2c3e50);
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Nunito', sans-serif;
+      color: #ffffff;
+    }
+    .hero-bg {
+      background-image: url('Gemini_Generated_Image_uivapcuivapcuiva111.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(10, 20, 30, 0.8), rgba(30, 41, 59, 0.7));
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      color: white;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+    }
+    .card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    .accent-text {
+      color: #60a5fa;
+    }
+    .roadmap-item {
+      background-color: #29374a;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      border-left: 4px solid #3b82f6;
+      transition: edi-background-color 0.3s ease;
+    }
+    .roadmap-item:hover {
+      background-color: #334155;
+    }
+    .community-link svg {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+    }
+    .community-link:hover svg {
+      transform: scale(1.2);
+    }
+    @keyframes gifLikeFade {
+      0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+      50% { opacity: 1; transform: scale(1) translateY(0); }
+      90% { opacity: 1; transform: scale(1) translateY(0); }
+      100% { opacity: 0; transform: scale(0.95) translateY(20px); }
+    }
+    .hero-text-animation {
+      animation: gifLikeFade 4s ease-in-out infinite;
+      display: inline-block;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    .hero-subtitle-animation {
+      animation: gifLikeFade 4s ease-in-out infinite 0.5s;
+    }
+    .hero-button-animation {
+      animation: gifLikeFade 4s ease-in-out infinite 1s;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(90deg, #ffffff, #d1d5db);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .about-video {
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-gray-100">
+
+  <nav class="bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 py-4 px-6 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold flex items-center">
+        <img src="byd_logo.jpg" alt="BYD Coin Logo" class="mr-2 rounded-full h-10 w-10"> BYD <span class="text-blue-400">Coin</span>
+      </a>
+      <div class="space-x-4">
+        <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+        <a href="#tokenomics" class="hover:text-blue-400 transition-colors">Tokenomics</a>
+        <a href="#roadmap" class="hover:text-blue-400 transition-colors">Roadmap</a>
+        <a href="#buy" class="btn-primary text-sm px-4 py-2">Get BYD!</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-bg text-center py-32 sm:py-40 md:py-48 px-4 relative">
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="relative z-10 container mx-auto">
+      <div class="hero-text-animation mb-6">
+        <h1 class="hero-title text-5xl sm:text-6xl md:text-7xl font-bold mb-2 tracking-tight">
+          BYD Coin
+        </h1>
+      </div>
+      <p class="hero-subtitle-animation text-xl sm:text-2xl mb-8 text-gray-200 font-light tracking-wide">
+        Craft Your Dreams <span class="font-semibold text-blue-300">on the Blockchain</span> with Elegance and Ambition
+      </p>
+      <a href="#buy" class="hero-button-animation btn-primary text-lg">Secure Your BYD Tokens</a>
+    </div>
+  </section>
+
+  <section id="about" class="py-20 px-6 bg-slate-800" data-aos="fade-up">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-10">What's <span class="accent-text">BYD Coin</span> All About? 🤔</h2>
+      <p class="max-w-3xl mx-auto text-lg text-gray-300 leading-relaxed">
+        BYD Coin isn't just another crypto; it's a <span class="font-semibold text-yellow-400">meme-powered dream machine</span>! Inspired by the awesome global rise of BYD electric vehicles, we're here to supercharge the community and zoom past old blockchain limits. Our mission? To be the <span class="italic">favorite token</span> for innovators, dreamers, and anyone ready for a fun ride in the crypto world!
+      </p>
+      <video src="byd_video.mp4" class="about-video mx-auto mt-10" autoplay loop muted playsinline data-aos="zoom-in-up"></video>
+    </div>
+  </section>
+
+  <section id="tokenomics" class="py-20 px-6" data-aos="fade-right">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Our <span class="accent-text">Tokenomics</span> Breakdown 📊</h2>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-2xl font-semibold mb-3 text-yellow-400">Total Supply ⛽</h3>
+          <p class="text-3xl font-bold">1,000,000,000 <span class="text-sm align-top">BYD</span></p>
+          <p class="text-sm text-gray-400 mt-1">Plenty of fuel for everyone's dreams!</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-2xl font-semibold mb-3 text-green-400">Distribution Plan 🗺️</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-300 tokenomics-list">
+            <li><span class="font-semibold">50% Public Sale:</span> Get 'em while they're hot!</li>
+            <li><span class="font-semibold">25% Community Rewards:</span> For our awesome dream builders.</li>
+            <li><span class="font-semibold">15% Team & Dev:</span> Keeping the engine running.</li>
+            <li><span class="font-semibold">10% Marketing & Partnerships:</span> Spreading the BYD love!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap" class="py-20 px-6 bg-slate-800" data-aos="fade-left">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">The <span class="accent-text">Roadmap</span> to Glory 🏆</h2>
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="roadmap-item" data-aos="slide-up">
+          <h4 class="text-xl font-semibold mb-1 text-yellow-400">✅ Phase 1: Q2 2025 - Liftoff!</h4>
+          <p>Launch & Token Sale - The BYD journey begins! All aboard the hype train! 🚂</p>
+        </div>
+        <div class="roadmap-item" data-aos="slide-up" data-aos-delay="100">
+          <h4 class="text-xl font-semibold mb-1 text-green-400">🚀 Phase 2: Q3 2025 - Expansion Pack!</h4>
+          <p>CEX Listing & NFT Integration - Going mainstream and getting artsy!</p>
+        </div>
+        <div class="roadmap-item" data-aos="slide-up" data-aos-delay="200">
+          <h4 class="text-xl font-semibold mb-1 text-blue-400">🌐 Phase 3: Q4 2025 - Power to the People!</h4>
+          <p>Community Voting & DAO Setup - You call the shots! Let's build together.</p>
+        </div>
+         <div class="roadmap-item" data-aos="slide-up" data-aos-delay="300">
+          <h4 class="text-xl font-semibold mb-1 text-purple-400">✨ Phase 4: 2026 & Beyond - To Infinity!</h4>
+          <p>More secret sauce, surprises, and building even bigger dreams! (Wen Lambo? 😉)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="buy" class="py-20 px-6" data-aos="zoom-in-up">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-10">How to Snag Your <span class="accent-text">BYD Tokens</span> 🛒</h2>
+      <div class="max-w-2xl mx-auto bg-slate-700/50 p-8 rounded-xl shadow-2xl">
+        <ol class="list-decimal list-inside space-y-4 text-left text-lg text-gray-300 custom-list">
+          <li><span class="font-semibold">Get a Crypto Wallet:</span> Like MetaMask or Trust Wallet (your digital garage!).</li>
+          <li><span class="font-semibold">Fuel Up:</span> Add some ETH or BNB to your wallet.</li>
+          <li><span class="font-semibold">Visit the Exchange:</span> Head over to PancakeSwap or Uniswap (official links coming SOON™).</li>
+          <li><span class="font-semibold">Swap for BYD:</span> Use our official contract address (don't get rugged, wait for the real one!) to swap for BYD Coin.</li>
+          <li><span class="font-semibold">HODL & Build Dreams!</span> Welcome to the family!</li>
+        </ol>
+        <p class="mt-6 text-yellow-400 font-semibold">Contract Address: <span class="text-gray-400 italic">Launching Soon - Stay Tuned! Don't buy from unofficial addresses!</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 bg-slate-800 text-center" data-aos="fade-up">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Join the <span class="accent-text">BYD Crew</span>! 🥳</h2>
+      <p class="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
+        We're more than a coin, we're a community of dreamers, builders, and meme lords! Follow us, chat with us, and let's make some noise!
+      </p>
+      <div class="flex justify-center space-x-6 sm:space-x-8">
+        <a href="#" class="community-link text-gray-300 hover:text-blue-400" aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+        </a>
+        <a href="#" class="community-link text-gray-300 hover:text-blue-500" aria-label="Telegram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8"><path d="M11.999 2.007c5.522 0 9.999 4.478 9.999 10.001s-4.477 10.001-9.999 10.001c-5.522 0-9.999-4.478-9.999-10.001S6.477 2.007 11.999 2.007zm4.534 7.632l-2.92 11.063c-.258.99-.854 1.23-1.632.766l-3.66-2.686-1.756 1.686c-.193.194-.357.356-.718.356-.59 0-.52-.235-.728-.804l-1.268-4.165-3.313-1.03c-.95-.298-.952-1.02.19-1.422l12.11-4.673c.807-.313 1.55.192 1.284.98z"/></svg>
+        </a>
+        <a href="#" class="community-link text-gray-300 hover:text-indigo-400" aria-label="Discord">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.07.07 0 00-.1.08L14.17 6h-4.34L9.1 4.08a.07.07 0 00-.1-.08c-1.5.26-2.94.71-4.27 1.33-.01 0-.02.01-.02.02C2.73 7.08 1.5 11.82 1.5 12c0 .02 0 .03.01.04A19.53 19.53 0 007.5 20c0 .07.02.07.07.07l.85-.93a.07.07 0 00-.01-.08A14.73 14.73 0 017 17.5c-.11-.02-.19-.09-.19-.21V15.5a.07.07 0 01.06-.07c.33-.06.66-.14 1-.21a.07.07 0 01.07.06v1.73a.07.07 0 00.08.07c.33.03.67.06 1 .1a.07.07 0 00.07-.06V15.5a.07.07 0 01.06-.07c.35-.07.69-.14 1.03-.21a.07.07 0 01.07.06v1.73c0 .03.01.05.03.07.34.03.68.06 1.02.1a.07.07 0 00.07-.06V15.5a.07.07 0 01.06-.07c.33-.06.66-.14 1-.21a.07.07 0 01.07.06v2.09c0 .12-.08.19-.19.21a14.7 14.7 0 01-.6.42.07.07 0 00-.01.08l.85.93c.05 0 .07 0 .07-.07A19.53 19.53 0 0022.5 12c0-.01 0-.02-.01-.03-.01-.02-.01-.02-.02-.02zM8.02 15c-1.1 0-2-1.12-2-2.5S6.92 10 8.02 10s2 1.12 2 2.5S9.12 15 8.02 15zm7.96 0c-1.1 0-2-1.12-2-2.5S14.88 10 15.98 10s2 1.12 2 2.5S17.08 15 15.98 15z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-center py-8 px-6">
+    <div class="mb-4">
+        <img src="byd_logo.jpg" alt="BYD Coin Small Logo" class="mx-auto mb-2 h-10 w-10 rounded-full">
+    </div>
+    <p class="text-gray-400 text-sm">© 2025 BYD Coin. All Rights Reserved. Built by Dreamers, for Dreamers!</p>
+    <p class="text-xs text-gray-500 mt-2">Disclaimer: Cryptocurrency investment is subject to high market risk. Please make your investments cautiously. BYD Coin is not responsible for any direct or indirect losses.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
+</body>
+</html>
