@@ -1,0 +1,313 @@
+/* === STYLES ASLI UNTUK DESKTOP === */
+:root {
+    --primary-color: #ffd700; /* Gold */
+    --secondary-color: #ff4136; /* Red */
+    --accent-color: #00ffff; /* Neon Cyan - WARNA BARU */
+    --health-color: #00ff00; /* Green */
+    --background-color: #0d204d; /* Deep Blue */
+    --surface-color: rgba(10, 20, 50, 0.7);
+    --text-color: #ffffff;
+    --border-color: #6c778c;
+    --font-pixel: 'Press Start 2P', cursive;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    margin: 0;
+    line-height: 1.6;
+    padding-top: 80px; /* Space for fixed HUD */
+}
+
+.scanlines {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3) 1px, transparent 1px, transparent 3px);
+    z-index: 9999; pointer-events: none;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* === [BARU] Game HUD (Menggantikan Navbar & Health Bars) === */
+.game-hud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(180deg, #050a1a, #1a2b5d);
+    border-bottom: 4px solid var(--border-color);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.hud-player { width: 35%; }
+.hud-player .name {
+    font-family: var(--font-pixel);
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 0px #000;
+}
+.hud-player .bar {
+    background-color: rgba(0,0,0,0.5);
+    border: 2px solid #000;
+    padding: 2px;
+}
+.hud-player .health {
+    background: linear-gradient(90deg, var(--health-color), #00aaff);
+    height: 20px;
+    box-shadow: 0 0 5px var(--health-color);
+}
+
+.hud-center { text-align: center; }
+.hud-center .nav-logo {
+    display: inline-flex; align-items: center; text-decoration: none; color: var(--text-color);
+}
+.hud-center .nav-logo img { height: 40px; margin-right: 10px; }
+.hud-center .nav-logo span { font-family: var(--font-pixel); font-size: 1rem; }
+
+.hud-info {
+    font-family: var(--font-pixel);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+.hud-info .timer {
+    margin-left: 15px;
+    color: var(--primary-color);
+}
+#menu-icon { display: none; } /* Tetap tersembunyi di desktop */
+.nav-links { display: none; } /* Navigasi utama disembunyikan di HUD desktop */
+
+/* --- Hero Section --- */
+.hero { position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden; margin-top: 0; }
+.video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+.video-container video { width: 100%; height: 100%; object-fit: cover; }
+.hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 32, 77, 0.6); z-index: 0; }
+.hero-content { z-index: 1; }
+.hero h1 {
+    font-family: var(--font-pixel);
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    text-shadow: 3px 3px 0 var(--secondary-color), 6px 6px 0 #000;
+    -webkit-text-stroke: 2px #000;
+}
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; font-family: var(--font-pixel); font-size: 0.9rem; }
+
+/* === [BARU] Arcade Button Style === */
+.arcade-button {
+    font-family: var(--font-pixel);
+    background: var(--secondary-color);
+    color: var(--text-color);
+    padding: 18px 35px;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 3px solid #000;
+    box-shadow: inset 0 -6px 0 rgba(0,0,0,0.3), 5px 5px 0px #000;
+    transition: all 0.1s ease-in-out;
+    border-radius: 8px;
+}
+.arcade-button:hover {
+    background-color: var(--primary-color);
+    color: #000;
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.2), 3px 3px 0px #000;
+    transform: translate(2px, 2px);
+}
+.arcade-button:active {
+    transform: translate(5px, 5px);
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2), 0 0 0px #000;
+}
+
+
+/* --- Sections & Cards --- */
+main { padding-top: 0; }
+section { padding: 80px 0; text-align: center; border-bottom: 4px solid var(--border-color); position: relative; }
+section:last-child { border-bottom: none; }
+.section-title {
+    font-family: var(--font-pixel);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 60px;
+    text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color), 3px 3px 0 #000;
+    -webkit-text-stroke: 1px #000;
+}
+.section-banner { max-width: 70%; height: auto; margin-top: 60px; border: 4px solid #000; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+
+/* === [DIROMBAK] Fighter Select Screen === */
+.fighter-select-container { display: flex; justify-content: center; align-items: stretch; gap: 10px; }
+.vs-logo-container { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.fighter-logo { max-width: 120px; animation: float 3s ease-in-out infinite; }
+.vs-text-main { font-family: var(--font-pixel); font-size: 4rem; color: var(--secondary-color); text-shadow: 3px 3px 0 #000; margin-top: 20px; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+.fighter-card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    background: var(--surface-color);
+    border: 4px solid var(--border-color);
+    width: 35%;
+    text-align: left;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.fighter-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 15px var(--accent-color), 0 0 30px var(--accent-color);
+    border-color: var(--accent-color);
+}
+.fighter-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--border-color); margin-bottom: 15px; padding-bottom: 10px; }
+.fighter-card h3 { font-family: var(--font-pixel); color: var(--secondary-color); margin: 0; font-size: 1.1rem; }
+.player-tag { font-family: var(--font-pixel); font-size: 0.8rem; color: var(--primary-color); }
+.fighter-quote { font-style: italic; border-left: 3px solid var(--primary-color); padding-left: 10px; }
+.fighter-card ul { list-style: none; padding-left: 0; }
+.fighter-card ul li { margin-bottom: 10px; }
+.fighter-card ul li::before { content: '» '; color: var(--primary-color); font-weight: bold; }
+
+.select-prompt {
+    font-family: var(--font-pixel);
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-shadow: 0 0 10px var(--accent-color);
+    animation: blink 1.5s linear infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.fighter-card:hover .select-prompt { opacity: 1; }
+
+/* Tokenomics */
+.token-details { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+.token-card { background-color: var(--surface-color); padding: 20px; min-width: 200px; border: 4px solid var(--border-color); transition: all 0.3s; }
+.token-card:hover { border-color: var(--primary-color); transform: scale(1.05); }
+.token-card h3 { margin-top: 0; font-family: var(--font-pixel); font-size: 1rem; color: var(--primary-color); }
+.contract-address { margin-top: 30px; }
+.contract-address code { background-color: #000; padding: 10px 15px; font-size: 0.9rem; word-break: break-all; border: 2px solid var(--border-color); }
+
+/* === [DISEMPURNAKAN] Roadmap / Battle Plan === */
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+    position: relative;
+}
+.roadmap-item {
+    background: var(--surface-color);
+    padding: 25px;
+    border: 4px solid var(--border-color);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+.roadmap-item:hover{
+    border-color: var(--accent-color);
+    transform: scale(1.05);
+}
+/* Garis penghubung antar fase */
+.roadmap-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    width: 70%;
+    height: 5px;
+    background: repeating-linear-gradient(90deg, var(--border-color), var(--border-color) 10px, transparent 10px, transparent 20px);
+    z-index: 1;
+    transform: translateY(-50%);
+}
+.roadmap-item h4 { font-family: var(--font-pixel); color: var(--primary-color); font-size: 1.1rem; margin-top: 0; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px; }
+.roadmap-item ul { list-style: none; padding: 0; }
+.roadmap-item ul li { margin-bottom: 10px; position: relative; padding-left: 20px; }
+.roadmap-item ul li::before { content: '»'; position: absolute; left: 0; color: var(--primary-color); }
+
+
+/* --- Footer & Modal --- */
+footer { background: #000; padding: 20px 0; text-align: center; border-top: 4px solid var(--border-color); }
+.social-links a { color: var(--text-color); margin: 0 15px; font-size: 1.5rem; text-decoration: none; transition: all 0.3s; }
+.social-links a:hover { color: var(--primary-color); transform: scale(1.2); }
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); z-index: 10001; display: none; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease; }
+.modal-overlay.show { display: flex; opacity: 1; }
+.modal-content { position: relative; background-color: var(--background-color); padding: 20px; border: 4px solid var(--primary-color); width: 90%; max-width: 800px; transform: scale(0.9); transition: transform 0.3s ease; }
+.modal-overlay.show .modal-content { transform: scale(1); }
+.close-modal { position: absolute; top: -15px; right: -15px; background-color: var(--secondary-color); color: white; font-size: 24px; font-weight: bold; width: 40px; height: 40px; line-height: 40px; text-align: center; border-radius: 50%; border: 3px solid white; cursor: pointer; }
+#fighter-video { max-height: 80vh; }
+
+
+/* ======================================================= */
+/* === STYLES RESPONSIVE UNTUK MOBILE (max-width: 768px) === */
+/* ======================================================= */
+@media (max-width: 768px) {
+    body { padding-top: 60px; }
+    
+    .game-hud { height: 60px; }
+    .hud-player .name { font-size: 0.6rem; }
+    .hud-player .health { height: 12px; }
+    .hud-center .nav-logo { display: none; } /* Sembunyikan logo di tengah HUD mobile */
+    .hud-info { font-size: 0.7rem; }
+    
+    /* --- Navigasi Mobile (Hamburger Menu) --- */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background-color: rgba(13, 32, 77, 0.95);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        top: 0;
+        left: -100%; /* Sembunyi di luar layar */
+        width: 100%;
+        height: 100vh;
+        z-index: 1001; /* Di atas HUD */
+        transition: left 0.4s ease-in-out;
+    }
+    .nav-links.active {
+        left: 0; /* Munculkan menu */
+    }
+    .nav-links a { font-size: 1.2rem; margin: 0; font-family: var(--font-pixel); }
+    .nav-button { background: var(--primary-color); color: #000; padding: 10px 15px; }
+
+    #menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 1002; /* Di atas segalanya */
+        position: absolute; /* Posisi relatif terhadap HUD */
+        right: 20px;
+    }
+    #menu-icon span { width: 100%; height: 3px; background-color: var(--text-color); transition: all 0.3s ease; }
+    #menu-icon.active span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
+    #menu-icon.active span:nth-child(2) { opacity: 0; }
+    #menu-icon.active span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
+    
+    .hero { height: 70vh; }
+    .hero h1 { font-size: 2.2rem; -webkit-text-stroke: 1px #000; }
+    .hero p { font-size: 0.8rem; }
+    section { padding: 40px 0; }
+    .section-title { font-size: 1.8rem; }
+
+    /* Layout Fighter & Card di Mobile */
+    .fighter-select-container { flex-direction: column; gap: 30px; }
+    .fighter-card { width: 90%; }
+    .vs-logo-container { order: -1; margin-bottom: 10px; }
+    .vs-text-main { font-size: 3rem; }
+    .section-banner { max-width: 90%; margin-top: 40px; }
+
+    /* Roadmap di Mobile */
+    .roadmap-grid { grid-template-columns: 1fr; gap: 30px; }
+    .roadmap-grid::before { display: none; } /* Sembunyikan garis di mobile */
+}
