@@ -138,6 +138,26 @@ section:last-child { border-bottom: none; }
     text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color), 3px 3px 0 #000;
     -webkit-text-stroke: 1px #000;
 }
+
+/* === [BARU] Bagian The Story === */
+#the-story .story-content {
+    background-color: var(--surface-color);
+    border: 4px solid var(--border-color);
+    padding: 30px 40px;
+    max-width: 900px;
+    margin: 0 auto; /* Ini akan menengahkan kotak deskripsi */
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+#the-story .story-content p {
+    margin-bottom: 20px;
+}
+
+#the-story .story-content p:last-child {
+    margin-bottom: 0;
+}
 .section-banner { max-width: 70%; height: auto; margin-top: 60px; border: 4px solid #000; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
 
 /* === [DIROMBAK] Fighter Select Screen === */
@@ -310,4 +330,82 @@ footer { background: #000; padding: 20px 0; text-align: center; border-top: 4px 
     /* Roadmap di Mobile */
     .roadmap-grid { grid-template-columns: 1fr; gap: 30px; }
     .roadmap-grid::before { display: none; } /* Sembunyikan garis di mobile */
+}
+/* === [BARU] STYLING UNTUK COUNTDOWN PRELOADER === */
+
+/* Wrapper untuk menyembunyikan konten utama pada awalnya */
+#page-wrapper.hidden-on-load {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.7s ease-in;
+}
+
+/* Lapisan overlay yang menutupi seluruh layar */
+#countdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 1;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+/* Teks countdown (3, 2, 1, FIGHT!) */
+#countdown-text {
+    font-family: var(--font-pixel);
+    font-size: 15vw; /* Ukuran font responsif terhadap lebar layar */
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px var(--primary-color);
+    transform: scale(0); /* Mulai dari skala 0 (tak terlihat) */
+    opacity: 0;
+}
+
+/* Kelas animasi yang akan kita tambahkan via JavaScript */
+#countdown-text.zoom-in {
+    animation: zoom-effect 1s forwards;
+}
+
+#countdown-text.fight-text {
+    font-size: 18vw;
+    color: var(--secondary-color); /* Warna merah untuk "FIGHT!" */
+    text-shadow: 0 0 10px var(--secondary-color), 0 0 30px #fff;
+    animation: fight-effect 1s forwards;
+}
+
+/* Keyframes untuk animasi angka */
+@keyframes zoom-effect {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Keyframes untuk animasi "FIGHT!" */
+@keyframes fight-effect {
+    0% {
+        transform: scale(0.5) rotate(-15deg);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.2) rotate(5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
 }

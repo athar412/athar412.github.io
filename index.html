@@ -10,125 +10,147 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="scanlines"></div>
-
-    <div class="game-hud">
-        <div class="hud-player">
-            <div class="name">PRESIDENT</div>
-            <div class="bar"><div class="health" style="width: 90%;"></div></div>
-        </div>
-        <div class="hud-center">
-            <a href="#" class="nav-logo">
-                <img src="assets/logo.png" alt="PVP Token Logo">
-                <span>$PVP</span>
-            </a>
-            <div class="hud-info">
-                <span class="round">ROUND 1</span>
-                <span class="timer">99</span>
-            </div>
-        </div>
-        <div class="hud-player">
-            <div class="name">POWELL</div>
-            <div class="bar"><div class="health" style="width: 85%;"></div></div>
-        </div>
-        <div class="nav-links">
-            <a href="#fighters">Fighters</a>
-            <a href="#tokenomics">Tokenomics</a>
-            <a href="#battleplan">Battle Plan</a>
-            <a href="https://t.me/yourtelegram" target="_blank" class="nav-button">JOIN ARENA</a>
-        </div>
-        <div id="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    
-    <header class="hero">
-        <div class="video-container">
-            <video autoplay loop muted playsinline src="assets/fight-animation.mp4"></video>
-        </div>
-        <div class="hero-content">
-            <h1>Round 1... FIGHT!</h1>
-            <p>The ultimate financial showdown on the blockchain.</p>
-            <a href="https://app.uniswap.org/#/swap?outputCurrency=[ALAMAT_KONTRAK_ANDA]" target="_blank" class="btn-primary arcade-button">START GAME (BUY $PVP)</a>
-        </div>
-    </header>
-
-    <main>
-        <section id="fighters" class="container">
-            <h2 class="section-title">CHOOSE YOUR FIGHTER</h2>
-            <div class="fighter-select-container">
-                <div class="fighter-card left-fighter" data-video-src="assets/president-animation.mp4">
-                    <div class="fighter-header">
-                        <h3>THE PRESIDENT</h3>
-                        <span class="player-tag">PLAYER 1</span>
-                    </div>
-                    <p class="fighter-quote">"Cut the rates! We need the economy to BRRR!"</p>
-                    <ul>
-                        <li>Move: Rate Cut Roar</li>
-                        <li>Power: Market Manipulation</li>
-                        <li>Stance: Dovish</li>
-                    </ul>
-                    <span class="select-prompt">SELECT</span>
-                </div>
-                
-                <div class="vs-logo-container">
-                    <img src="assets/logo.png" alt="President vs Powell Logo" class="fighter-logo">
-                    <span class="vs-text-main">VS</span>
-                </div>
-
-                <div class="fighter-card right-fighter" data-video-src="assets/powell-animation.mp4">
-                    <div class="fighter-header">
-                        <h3>THE CHAIRMAN</h3>
-                        <span class="player-tag">PLAYER 2</span>
-                    </div>
-                    <p class="fighter-quote">"Inflation must be contained at all costs."</p>
-                    <ul>
-                        <li>Move: Hawkish Glare</li>
-                        <li>Power: Quantitative Tightening</li>
-                        <li>Stance: Hawkish</li>
-                    </ul>
-                    <span class="select-prompt">SELECT</span>
-                </div>
-            </div>
-             <img src="assets/banner.jpg" alt="President vs Powell Banner" class="section-banner">
-        </section>
-
-        <section id="tokenomics" class="container">
-            <h2 class="section-title">GAME STATS (TOKENOMICS)</h2>
-            <div class="token-details">
-                <div class="token-card"><h3>Total Supply</h3><p>1,000,000,000 $PVP</p></div>
-                <div class="token-card"><h3>Taxes</h3><p>0% Buy / 0% Sell</p></div>
-                <div class="token-card"><h3>Liquidity</h3><p>Locked & Burned</p></div>
-            </div>
-            <div class="contract-address"><p>Contract Address:</p><code>[ALAMAT_KONTRAK_ANDA_DISINI]</code></div>
-        </section>
-
-        <section id="battleplan" class="container">
-            <h2 class="section-title">BATTLE PLAN (ROADMAP)</h2>
-            <div class="roadmap-grid">
-                <div class="roadmap-item"><h4>Phase 1: The Stare Down</h4><ul><li>Stealth Launch</li><li>Website & Socials Launch</li><li>Community Building</li><li>1,000 Fighters (Holders)</li></ul></div>
-                <div class="roadmap-item"><h4>Phase 2: First Jab</h4><ul><li>CoinGecko & CMC Listing</li><li>Meme Contests</li><li>Influencer Partnerships</li><li>5,000 Fighters</li></ul></div>
-                <div class="roadmap-item"><h4>Phase 3: K.O.</h4><ul><li>CEX Listings</li><li>$PVP Utility Reveal</li><li>Global Domination</li><li>10,000+ Fighters</li></ul></div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 $PVP Token. All rights reserved. This is a memecoin with no intrinsic value. Not financial advice.</p>
-            <div class="social-links"><a href="https://x.com/yourtwitter" target="_blank" title="Twitter/X">X</a><a href="https://t.me/yourtelegram" target="_blank" title="Telegram">Telegram</a></div>
-        </div>
-    </footer>
-
-    <div id="video-modal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <video id="fighter-video" width="100%" controls autoplay></video>
-        </div>
+    <div id="countdown-overlay">
+        <div id="countdown-text"></div>
     </div>
 
-    <script src="script.js"></script>
+    <div id="page-wrapper" class="hidden-on-load">
+
+        <div class="scanlines"></div>
+
+        <div class="game-hud">
+            <div class="hud-player">
+                <div class="name">PRESIDENT</div>
+                <div class="bar"><div class="health" style="width: 90%;"></div></div>
+            </div>
+            <div class="hud-center">
+                <a href="#" class="nav-logo">
+                    <img src="assets/logo.png" alt="PVP Token Logo">
+                    <span>$PVP</span>
+                </a>
+                <div class="hud-info">
+                    <span class="round">ROUND 1</span>
+                    <span class="timer">99</span>
+                </div>
+            </div>
+            <div class="hud-player">
+                <div class="name">POWELL</div>
+                <div class="bar"><div class="health" style="width: 85%;"></div></div>
+            </div>
+            <div class="nav-links">
+                <a href="#the-story">The Story</a>
+                <a href="#fighters">Fighters</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#battleplan">Battle Plan</a>
+                <a href="https://t.me/yourtelegram" target="_blank" class="nav-button">JOIN ARENA</a>
+            </div>
+            <div id="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <header class="hero">
+            <div class="video-container">
+                <video autoplay loop muted playsinline src="assets/fight-animation.mp4"></video>
+            </div>
+            <div class="hero-content">
+                <h1>Round 1... FIGHT!</h1>
+                <p>The ultimate financial showdown on the blockchain.</p>
+                <a href="https://app.uniswap.org/#/swap?outputCurrency=[ALAMAT_KONTRAK_ANDA]" target="_blank" class="btn-primary arcade-button">START GAME (BUY $PVP)</a>
+            </div>
+        </header>
+
+        <main>
+            <section id="the-story" class="container">
+                <h2 class="section-title">THE ARENA: A BATTLE FOR THE ECONOMY</h2>
+                <div class="story-content">
+                    <p>
+                        In one corner, "The President," a real-estate-tycoon-turned-politician. With a mantra to make the economy great, he demands aggressive rate cuts. To him, the economy is a machine that must constantly go "BRRR"—printing money endlessly to pump the stock market and win over the public. Every rate hike is a personal attack on his legacy.
+                    </p>
+                    <p>
+                        In the other corner, "The Chairman," head of the world's most influential central bank, The Federal Reserve. As the guardian of economic stability, his mission is to combat the inflation that erodes public wealth. With a sharp gaze and hawkish policies, he withstands political pressure, believing that the bitter pill of high rates today is the cure for long-term economic health.
+                    </p>
+                    <p>
+                        Now, their epic battle spills into the blockchain arena. <strong>$PVP (President vs Powell)</strong> is the token symbolizing the eternal clash between political stimulus and monetary policy. Every transaction is a roar of support; every price pump is a round won. Who will you back in the greatest financial duel of the century?
+                    </p>
+                </div>
+            </section>
+
+            <section id="fighters" class="container">
+                <h2 class="section-title">CHOOSE YOUR FIGHTER</h2>
+                <div class="fighter-select-container">
+                    <div class="fighter-card left-fighter" data-video-src="assets/president-animation.mp4">
+                        <div class="fighter-header">
+                            <h3>THE PRESIDENT</h3>
+                            <span class="player-tag">PLAYER 1</span>
+                        </div>
+                        <p class="fighter-quote">"Cut the rates! We need the economy to BRRR!"</p>
+                        <ul>
+                            <li>Move: Rate Cut Roar</li>
+                            <li>Power: Market Manipulation</li>
+                            <li>Stance: Dovish</li>
+                        </ul>
+                        <span class="select-prompt">SELECT</span>
+                    </div>
+                    
+                    <div class="vs-logo-container">
+                        <img src="assets/logo.png" alt="President vs Powell Logo" class="fighter-logo">
+                        <span class="vs-text-main">VS</span>
+                    </div>
+
+                    <div class="fighter-card right-fighter" data-video-src="assets/powell-animation.mp4">
+                        <div class="fighter-header">
+                            <h3>THE CHAIRMAN</h3>
+                            <span class="player-tag">PLAYER 2</span>
+                        </div>
+                        <p class="fighter-quote">"Inflation must be contained at all costs."</p>
+                        <ul>
+                            <li>Move: Hawkish Glare</li>
+                            <li>Power: Quantitative Tightening</li>
+                            <li>Stance: Hawkish</li>
+                        </ul>
+                        <span class="select-prompt">SELECT</span>
+                    </div>
+                </div>
+                 <img src="assets/banner.jpg" alt="President vs Powell Banner" class="section-banner">
+            </section>
+
+            <section id="tokenomics" class="container">
+                <h2 class="section-title">GAME STATS (TOKENOMICS)</h2>
+                <div class="token-details">
+                    <div class="token-card"><h3>Total Supply</h3><p>1,000,000,000 $PVP</p></div>
+                    <div class="token-card"><h3>Taxes</h3><p>0% Buy / 0% Sell</p></div>
+                    <div class="token-card"><h3>Liquidity</h3><p>Locked & Burned</p></div>
+                </div>
+                <div class="contract-address"><p>Contract Address:</p><code>[ALAMAT_KONTRAK_ANDA_DISINI]</code></div>
+            </section>
+
+            <section id="battleplan" class="container">
+                <h2 class="section-title">BATTLE PLAN (ROADMAP)</h2>
+                <div class="roadmap-grid">
+                    <div class="roadmap-item"><h4>Phase 1: The Stare Down</h4><ul><li>Stealth Launch</li><li>Website & Socials Launch</li><li>Community Building</li><li>1,000 Fighters (Holders)</li></ul></div>
+                    <div class="roadmap-item"><h4>Phase 2: First Jab</h4><ul><li>CoinGecko & CMC Listing</li><li>Meme Contests</li><li>Influencer Partnerships</li><li>5,000 Fighters</li></ul></div>
+                    <div class="roadmap-item"><h4>Phase 3: K.O.</h4><ul><li>CEX Listings</li><li>$PVP Utility Reveal</li><li>Global Domination</li><li>10,000+ Fighters</li></ul></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 $PVP Token. All rights reserved. This is a memecoin with no intrinsic value. Not financial advice.</p>
+                <div class="social-links"><a href="https://x.com/yourtwitter" target="_blank" title="Twitter/X">X</a><a href="https://t.me/yourtelegram" target="_blank" title="Telegram">Telegram</a></div>
+            </div>
+        </footer>
+
+        <div id="video-modal" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <video id="fighter-video" width="100%" controls autoplay></video>
+            </div>
+        </div>
+
+    </div><script src="script.js"></script>
 </body>
 </html>
