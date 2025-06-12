@@ -266,16 +266,55 @@ footer { background: #000; padding: 20px 0; text-align: center; border-top: 4px 
 /* ======================================================= */
 /* === STYLES RESPONSIVE UNTUK MOBILE (max-width: 768px) === */
 /* ======================================================= */
+/* ======================================================= */
+/* === STYLES RESPONSIVE UNTUK MOBILE (max-width: 768px) === */
+/* ======================================================= */
 @media (max-width: 768px) {
-    body { padding-top: 60px; }
+    body { 
+        padding-top: 60px; /* Sesuaikan dengan tinggi HUD mobile */
+    }
     
-    .game-hud { height: 60px; }
-    .hud-player .name { font-size: 0.6rem; }
-    .hud-player .health { height: 12px; }
-    .hud-center .nav-logo { display: none; } /* Sembunyikan logo di tengah HUD mobile */
-    .hud-info { font-size: 0.7rem; }
+    /* [DIPERBAIKI] Layout Game HUD untuk Mobile */
+    .game-hud { 
+        height: 60px;
+        padding: 0 10px; /* Kurangi padding horizontal */
+        gap: 10px; /* Beri sedikit jarak antar elemen */
+    }
     
-    /* --- Navigasi Mobile (Hamburger Menu) --- */
+    .hud-player { 
+        flex: 1; /* Biarkan health bar mengisi ruang yang tersedia */
+        min-width: 0; /* Izinkan elemen untuk menyusut */
+    }
+
+    .hud-player .name { 
+        font-size: 0.7rem; /* Sedikit lebih besar agar terbaca */
+        white-space: nowrap; /* Cegah teks nama turun ke bawah */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Tampilkan ... jika teks terlalu panjang */
+    }
+
+    .hud-player .health { 
+        height: 15px; 
+    }
+
+    /* Sembunyikan elemen tengah di HUD untuk memberi ruang */
+    .hud-center { 
+        display: none; 
+    }
+    
+    /* [DIPERBAIKI] Posisi Hamburger Menu */
+    #menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 1002;
+        /* Hapus 'position: absolute' agar tetap di dalam flow normal HUD */
+    }
+
+    /* Tampilan Menu Navigasi saat aktif */
     .nav-links {
         display: flex;
         flex-direction: column;
@@ -286,29 +325,19 @@ footer { background: #000; padding: 20px 0; text-align: center; border-top: 4px 
         backdrop-filter: blur(10px);
         position: fixed;
         top: 0;
-        left: -100%; /* Sembunyi di luar layar */
+        left: -100%;
         width: 100%;
         height: 100vh;
-        z-index: 1001; /* Di atas HUD */
+        z-index: 1001;
         transition: left 0.4s ease-in-out;
     }
+
     .nav-links.active {
-        left: 0; /* Munculkan menu */
+        left: 0;
     }
     .nav-links a { font-size: 1.2rem; margin: 0; font-family: var(--font-pixel); }
     .nav-button { background: var(--primary-color); color: #000; padding: 10px 15px; }
 
-    #menu-icon {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 25px;
-        cursor: pointer;
-        z-index: 1002; /* Di atas segalanya */
-        position: absolute; /* Posisi relatif terhadap HUD */
-        right: 20px;
-    }
     #menu-icon span { width: 100%; height: 3px; background-color: var(--text-color); transition: all 0.3s ease; }
     #menu-icon.active span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
     #menu-icon.active span:nth-child(2) { opacity: 0; }
@@ -317,19 +346,26 @@ footer { background: #000; padding: 20px 0; text-align: center; border-top: 4px 
     .hero { height: 70vh; }
     .hero h1 { font-size: 2.2rem; -webkit-text-stroke: 1px #000; }
     .hero p { font-size: 0.8rem; }
-    section { padding: 40px 0; }
-    .section-title { font-size: 1.8rem; }
+
+    section { padding: 50px 0; }
+    .section-title { font-size: 1.8rem; margin-bottom: 40px; }
+
+    /* [DIPERBAIKI] Teks pada Story */
+    #the-story .story-content {
+        padding: 20px;
+        font-size: 1rem;
+    }
 
     /* Layout Fighter & Card di Mobile */
     .fighter-select-container { flex-direction: column; gap: 30px; }
-    .fighter-card { width: 90%; }
+    .fighter-card { width: 90%; margin: 0 auto; }
     .vs-logo-container { order: -1; margin-bottom: 10px; }
     .vs-text-main { font-size: 3rem; }
     .section-banner { max-width: 90%; margin-top: 40px; }
 
     /* Roadmap di Mobile */
-    .roadmap-grid { grid-template-columns: 1fr; gap: 30px; }
-    .roadmap-grid::before { display: none; } /* Sembunyikan garis di mobile */
+    .roadmap-grid { grid-template-columns: 1fr; gap: 20px; }
+    .roadmap-grid::before { display: none; }
 }
 /* === [BARU] STYLING UNTUK COUNTDOWN PRELOADER === */
 
